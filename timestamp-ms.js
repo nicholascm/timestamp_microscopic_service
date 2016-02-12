@@ -20,9 +20,7 @@ app.get('/', function(req, res) {
 })
 */
 app.get('/', function (req,res) {
-    res.end({
-            "unixtime": "something unixy"
-        }); 
+    res.end("hello world"); 
 }); 
 
 app.listen(app.get('port'), function() {
