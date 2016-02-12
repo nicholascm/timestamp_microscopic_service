@@ -3,6 +3,7 @@ var express = require('express')
 
 var app = express(); 
 
+var date = new Date(); 
 
 app.set('port', (process.env.PORT || 5000));
 
@@ -19,7 +20,9 @@ app.get('/', function(req, res) {
 })
 */
 app.get('/', function (req,res) {
-    res.end("hello world"); 
+    res.end({
+            "unixtime": date.getTime()
+        }); 
 }); 
 
 app.listen(app.get('port'), function() {
