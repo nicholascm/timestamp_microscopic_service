@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/nicholascm90/timestamp_microscopic_service/issues"
   },
-  "homepage": "https://github.com/nicholascm90/timestamp_microscopic_service#readme"
+  "homepage": "https://github.com/nicholascm90/timestamp_microscopic_service#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
 }
