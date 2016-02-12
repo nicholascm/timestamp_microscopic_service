@@ -21,7 +21,7 @@ app.get('/', function(req, res) {
 */
 app.get('/', function (req,res) {
     res.end({
-            "unixtime": date.getTime()
+            "unixtime": "something unixy"
         }); 
 }); 
 
