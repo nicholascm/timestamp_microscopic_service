@@ -2,7 +2,9 @@ var express = require('express')
 
 var port = 8080; 
 
-var app = express()
+var app = express(); 
+
+/*
 
 var date = Date()
 
@@ -13,5 +15,9 @@ app.get('/', function(req, res) {
         })
     
 })
+*/
+app.get('/', function (req,res) {
+    res.send("hello world"); 
+})
 
-app.listen(port)
+app.listen(port); 
