@@ -20,7 +20,7 @@ app.get('/', function(req, res) {
 })
 */
 app.get('/', function (req,res) {
-    res.end("hello world"); 
+    res.send("hello world"); 
 }); 
 
 app.listen(app.get('port'), function() {
