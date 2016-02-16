@@ -26,6 +26,11 @@ function getTimes(num) {
     var date = new Date(num); 
     return {
         "unix": date.getTime(), 
-        "natural": date.getMonth()+" "+date.getDay()+" ,"+date.getYear()
+        "natural": monthString(date.getMonth())+" "+date.getDay()+","+date.getYear()
     }
 }; 
+
+function monthString(num) {
+    var months = ["January", "February", "March", "April", "May", "June"]
+    return months[num]; 
+}
