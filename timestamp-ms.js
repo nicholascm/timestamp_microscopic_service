@@ -24,5 +24,8 @@ var timeProvided = 1450137600;
 
 function getTimes(num) {
     var date = new Date(num); 
-    return {"unix": date.getTime()}
+    return {
+        "unix": date.getTime(), 
+        "natural": toString(date.getMonth()+" "+date.getDay()+" ,"+date.getYear())
+    }
 }; 
