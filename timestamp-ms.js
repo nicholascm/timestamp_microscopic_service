@@ -40,9 +40,7 @@ function getNaturalDate(num) {
 }
 
 
-
-
 function monthString(num) {
-    var months = ["January", "February", "March", "April", "May", "June"]
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
     return months[num]; 
 }
