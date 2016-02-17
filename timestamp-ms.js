@@ -12,10 +12,10 @@ app.get('/fun', function (req,res) {
     res.send("hello world"); 
 }); 
 
-app.get('/', function (req, res) {
-    var timeProvided = req.params.name; 
+app.get('/:dateString', function (req, res) {
+    var dateString = req.params.dateString; 
     
-    res.send(JSON.stringify(getTimes(timeProvided))); 
+    res.send(JSON.stringify(getTimes(dateString))); 
 }); 
 
 app.listen(app.get('port'), function() {
