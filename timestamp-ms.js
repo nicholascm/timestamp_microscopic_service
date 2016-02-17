@@ -3,8 +3,6 @@ var express = require('express')
 
 var app = express(); 
 
-var date = new Date(); 
-
 app.set('port', (process.env.PORT || 5000));
 
 
@@ -15,7 +13,6 @@ app.get('/fun', function (req,res) {
 app.get('/:dateString', function (req, res) {
     var dateString = req.params.dateString; 
     res.json(getTimes(Number(dateString))); 
-    //res.send(JSON.stringify(getTimes(dateString))); 
 }); 
 
 app.listen(app.get('port'), function() {
@@ -23,9 +20,6 @@ app.listen(app.get('port'), function() {
 });
 
 //var timeProvided = 1450137600; 
-
-
-
 
 function getTimes(num) {
     return {
@@ -35,12 +29,14 @@ function getTimes(num) {
 }; 
 
 function getUnixDate(num) {
-    return date.getTime(num); 
+    var date = new Date(num);
+    return date.getTime(); 
 }
 
 
 function getNaturalDate(num) {
-    return monthString(date.getMonth(num))+" "+date.getDay(num)+","+date.getFullYear(num); 
+    var date = new Date(num);
+    return monthString(date.getMonth())+" "+date.getDay()+","+date.getFullYear(); 
 }
 
 
