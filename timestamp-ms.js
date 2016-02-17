@@ -14,7 +14,6 @@ app.get('/fun', function (req,res) {
 
 app.get('/:dateString', function (req, res) {
     var dateString = req.params.dateString; 
-    console.log(dateString); 
     res.json(getTimes(Number(dateString))); 
     //res.send(JSON.stringify(getTimes(dateString))); 
 }); 
@@ -29,7 +28,6 @@ app.listen(app.get('port'), function() {
 
 
 function getTimes(num) {
-    var date = new Date(); 
     return {
         "unix": getUnixDate(num),
         "natural": getNaturalDate(num)
