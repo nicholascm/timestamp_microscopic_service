@@ -31,10 +31,19 @@ app.listen(app.get('port'), function() {
 function getTimes(num) {
     var date = new Date(); 
     return {
-        "unix": date.getTime(), 
-        "natural": monthString(date.getMonth(num))+" "+date.getDay(num)+","+date.getFullYear(num)
+        "unix": getUnixDate(num),
+        "natural": getNaturalDate(num)
     }
 }; 
+
+function getUnixDate(num) {
+    return date.getTime(num); 
+}
+
+
+function getNaturalDate(num) {
+    return monthString(date.getMonth(num))+" "+date.getDay(num)+","+date.getFullYear(num); 
+}
 
 
 
