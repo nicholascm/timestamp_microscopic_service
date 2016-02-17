@@ -15,7 +15,7 @@ app.get('/fun', function (req,res) {
 app.get('/:dateString', function (req, res) {
     var dateString = req.params.dateString; 
     console.log(dateString); 
-    res.json(getTimes(dateString)); 
+    res.json(getTimes(Number(dateString))); 
     //res.send(JSON.stringify(getTimes(dateString))); 
 }); 
 
