@@ -22,8 +22,9 @@ app.listen(app.get('port'), function() {
 //var timeProvided = 1450137600; 
 
 function getTimes(num) {
+var date = new Date(); 
     return {
-        "unix": getUnixDate(num),
+        "unix": date.parse(num),
         "natural": getNaturalDate(num)
     }
 }; 
