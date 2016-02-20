@@ -5,6 +5,9 @@ var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
+app.get('/', function(req, res) {
+    res.send("<h1>Home page</h1>"); 
+}); 
 
 app.get('/fun', function (req,res) {
     res.send("hello world"); 
