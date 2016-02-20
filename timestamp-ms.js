@@ -15,7 +15,7 @@ app.get('/fun', function (req,res) {
 
 app.get('/:dateString', function (req, res) {
     var dateString = req.params.dateString; 
-    res.json(getTimes(Number(dateString))); 
+    res.json(getTimes(dateString)); 
 }); 
 
 app.listen(app.get('port'), function() {
@@ -24,36 +24,36 @@ app.listen(app.get('port'), function() {
 
 //var timeProvided = 1450137600; 
 
-function getTimes(num) {
+function getTimes(dateString) {
     var date = new Date();
     return {
-        "unix": getUnixDate(num),
-        "natural": getNaturalDate(num)
+        "unix": getUnixDate(dateString),
+        "natural": getNaturalDate(dateString)
     }
 }; 
 
-function getUnixDate(num) {
+function getUnixDate(dateString) {
     
-    var date = new Date(num);
+    var date = new Date(dateString);
     
-        if (typeof num == "number") {
+        if (typeof Number(dateString) == "number") {
             return date.getTime(); 
         }
         else {
-            return date.parse(num); 
+            return date.parse(dateString); 
         }
     }
 
 
-function getNaturalDate(num) {
+function getNaturalDate(dateString) {
     
-    var date = new Date(num*1000);
+    var date = new Date(dateString*1000);
     
-    if (typeof num == "number") {
+    if (typeof dateString == "number") {
         return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
     }
     else {
-        return num; 
+        return dateString; 
     }
 }
 
