@@ -33,14 +33,12 @@ function getTimes(dateString) {
 }; 
 
 
-
-
 function getUnixDate(dateString) {
     
     var date = new Date(dateString);
     
         if (isNumeric(dateString)) {
-            return date.getTime(); 
+            return Number(dateString); 
         }
         else {
             return date.parse(dateString); 
