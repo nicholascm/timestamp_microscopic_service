@@ -41,7 +41,7 @@ function getUnixDate(dateString) {
             return Number(dateString); 
         }
         else {
-            return date.parse(dateString); 
+            return Date.parse(dateString); 
         }
     }
 
