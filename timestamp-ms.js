@@ -32,11 +32,14 @@ function getTimes(dateString) {
     }
 }; 
 
+
+
+
 function getUnixDate(dateString) {
     
     var date = new Date(dateString);
     
-        if (typeof Number(dateString) == "number" && !isNaN(dateString)) {
+        if (isNumeric(dateString)) {
             return date.getTime(); 
         }
         else {
@@ -49,11 +52,17 @@ function getNaturalDate(dateString) {
     
     var date = new Date(dateString*1000);
     
-    if (typeof dateString == "number" && !isNaN(dateString)) {
+    if (isNumeric(dateString)) {
         return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
     }
     else {
         return dateString; 
+    }
+}
+
+function isNumeric(dateString) {
+    if (typeof Number(dateString)== "number" && !isNaN(Number(dateString))) {
+        return true; 
     }
 }
 
