@@ -6,7 +6,7 @@ var app = express();
 app.set('port', (process.env.PORT || 5000));
 
 app.get('/', function(req, res) {
-    res.send("<h1>Home page</h1>"); 
+    res.send("<h1>Home page</h1><br><p>Unix/Natural Date Microservice</p> "); 
 }); 
 
 app.get('/fun', function (req,res) {
@@ -36,7 +36,7 @@ function getUnixDate(dateString) {
     
     var date = new Date(dateString);
     
-        if (typeof Number(dateString) == "number") {
+        if (typeof Number(dateString) == "number" && !isNaN(dateString)) {
             return date.getTime(); 
         }
         else {
@@ -49,7 +49,7 @@ function getNaturalDate(dateString) {
     
     var date = new Date(dateString*1000);
     
-    if (typeof dateString == "number") {
+    if (typeof dateString == "number" && !isNaN(dateString)) {
         return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
     }
     else {
