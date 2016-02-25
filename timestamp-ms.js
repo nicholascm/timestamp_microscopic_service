@@ -26,11 +26,31 @@ app.listen(app.get('port'), function() {
 
 function getTimes(dateString) {
     var date = new Date();
-    return {
-        "unix": getUnixDate(dateString),
-        "natural": getNaturalDate(dateString)
+    if (validDateRequest(dateString)) {
+        return {
+            "unix": getUnixDate(dateString),
+            "natural": getNaturalDate(dateString)
+            }
+        }
+    else {
+        return {
+            "unix": null, 
+            "natural": null
+        }
     }
 }; 
+
+
+function validDateRequest(string) {
+    var checkDate = new Date(string);  //creates a new date object when provided a unix time string 
+    var parseDate = Date.parse(string); //returns a numeric value when provided a date string like "January 1, 2015", returns NaN for invalid
+    if (!isNaN(parseDate) || !isNaN(checkDate.getTime())) {
+        
+        //logic assumes that if one of these is valid, we can provide the json response
+        
+        return true; 
+    }
+}
 
 
 function getUnixDate(dateString) {
@@ -70,3 +90,4 @@ function monthString(num) {
     return months[num]; 
 }
 
+//really need to check for valid date or unix before even going on to provide that information. 
