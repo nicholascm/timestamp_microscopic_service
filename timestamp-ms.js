@@ -42,8 +42,8 @@ function getTimes(dateString) {
 
 
 function validDateRequest(string) {
-    var checkDate = new Date(string);  //creates a new date object when provided a unix time string 
-    var parseDate = Date.parse(Number(string)*1000); //returns a numeric value when provided a date string like "January 1, 2015", returns NaN for invalid
+    var checkDate = new Date(Number(string)*1000);  //creates a new date object when provided a unix time string 
+    var parseDate = Date.parse(string); //returns a numeric value when provided a date string like "January 1, 2015", returns NaN for invalid
     
     if (!isNaN(parseDate) || !isNaN(checkDate.getTime())) {
         
