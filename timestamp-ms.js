@@ -43,7 +43,8 @@ function getTimes(dateString) {
 
 function validDateRequest(string) {
     var checkDate = new Date(string);  //creates a new date object when provided a unix time string 
-    var parseDate = Date.parse(string); //returns a numeric value when provided a date string like "January 1, 2015", returns NaN for invalid
+    var parseDate = Date.parse(Number(string)*1000); //returns a numeric value when provided a date string like "January 1, 2015", returns NaN for invalid
+    
     if (!isNaN(parseDate) || !isNaN(checkDate.getTime())) {
         
         //logic assumes that if one of these is valid, we can provide the json response
@@ -65,7 +66,6 @@ function getUnixDate(dateString) {
         }
     }
 
-
 function getNaturalDate(dateString) {
     
     var date = new Date(dateString);
@@ -77,6 +77,7 @@ function getNaturalDate(dateString) {
         return dateString; 
     }
 }
+
 
 function isNumeric(dateString) {
     if (typeof Number(dateString)== "number" && !isNaN(Number(dateString))) {
