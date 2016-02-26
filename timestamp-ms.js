@@ -73,11 +73,13 @@ function getUnixDate(dateString) {
     }
 
 function getNaturalDate(dateString) {
-    
-    var date = new Date(Number(dateString)*1000);
-
-    return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
-
+    if (Number(dateString) && !isNaN(Number(dateString))) {
+        var date = new Date(Number(dateString)*1000);
+        return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
+    }
+    else {
+        return Date.parse(dateString); 
+    }
 }
 
 
