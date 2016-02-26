@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nicholascm90/timestamp_microscopic_service#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jasmine": "^2.4.1"
   }
 }

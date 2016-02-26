@@ -1,5 +1,8 @@
 var express = require('express') 
+	
+var Jasmine = require('jasmine');
 
+var jasmine = new Jasmine();
 
 var app = express(); 
 
@@ -50,6 +53,9 @@ function validDateRequest(string) {
         //logic assumes that if one of these is valid, we can provide the json response
         
         return true; 
+    }
+    else {
+        return false; 
     }
 }
 
