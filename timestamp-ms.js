@@ -74,7 +74,7 @@ function getUnixDate(dateString) {
 
 function getNaturalDate(dateString) {
     
-    var date = new Date(dateString);
+    var date = new Date(Number(dateString)*1000);
 
     return monthString(date.getMonth())+" "+date.getDate()+", "+date.getFullYear();
 
