@@ -65,10 +65,10 @@ function getUnixDate(dateString) {
     var date = new Date(dateString);
     
         if (isNumeric(dateString)) {
-            return Number(dateString)/1000; 
+            return Number(dateString); 
         }
         else {
-            return Date.parse(dateString); 
+            return Date.parse(dateString)/1000; 
         }
     }
 
